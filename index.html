@@ -299,6 +299,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/Angular组件通讯/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Czt">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/42_avatar_middle.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/21/Angular组件通讯/" itemprop="url">Angular组件通讯</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-21T10:07:46+08:00">
+                2019-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Angular/" itemprop="url" rel="index">
+                    <span itemprop="name">Angular</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>组件通讯学习<br>组件关系包含：父子关系、兄弟关系、无直接关系<br>通常处理方式：<br>    1.父子之间（@Input,@Output,模版变量,@ViewChild）<br>    2.非父子之间（Service,localStorage）<br>    3.Session等服务器端解决方法</p>
+<p>父子组件之间的通讯：<br>    @Input： 属性绑定，子组件中定义@Input属性接收父组件向子组件传递的数据<br>    @Output：事件绑定，子组件中定义@Output属性向父组件传递数据的同时触发事件</p>
+<p>例：父子组件之间的通讯<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">1.父组件直接调用子组件的方法</span><br><span class="line">  通过模板内部定义子组件变量,在父组件上可以直接调用子组件的方法：</span><br><span class="line">	</span><br><span class="line">  1)子组件中定义@Input属性（ts）</span><br><span class="line">  @Input() isShowData: boolean; // 父组件传入的值:是否显示数据</span><br><span class="line"></span><br><span class="line">  2)父组件中定义属性（ts）</span><br><span class="line">  isShowData: false; // 父组件传给子组件的值:是否显示数据(否)</span><br><span class="line">	</span><br><span class="line">  3)父组件直接调用子组件时传递数据（html）</span><br><span class="line">  &lt;app-component [isShowData]=&quot;isShowData&quot;&gt;&lt;/app-component&gt;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">2.父组件接受子组件派发的事件:</span><br><span class="line">  通过@Output在子组件绑定一个事件发射器,在父组件通过事件绑定监听该事件，</span><br><span class="line">  这样在子组件派发一个事件,父组件就能够收到：</span><br><span class="line">  </span><br><span class="line">  1)子组件中定义@Output属性（ts）</span><br><span class="line">  @Output() listComponentOutput: EventEmitter&lt;any&gt; = new EventEmitter&lt;any&gt;(); // 传出属性</span><br><span class="line">  // check方法赋值(因为是any类型，所以outputData可以传出任意类型)</span><br><span class="line">  check(): void &#123;</span><br><span class="line">  	this.listOutputData.openDrawer = true;</span><br><span class="line"> 	this.listOutputData.outputData = [&quot;outputTestData&quot;,true];</span><br><span class="line"> 	this.listComponentOutput.emit(this.listOutputData);</span><br><span class="line">  &#125;</span><br><span class="line">	</span><br><span class="line">  2)父组件直接调用子组件时，子组件派发一个事件（html）</span><br><span class="line">  &lt;app-component (listComponentOutput)=&apos;getListOutputData($event)&apos;&gt;&lt;/app-component&gt;</span><br><span class="line">	</span><br><span class="line">  3)父组件中通过事件绑定来监听（ts）</span><br><span class="line">  visible: boolean; // 是否显示某些东西</span><br><span class="line">  getValueForTest: string; // 接收check方法传来的值1</span><br><span class="line">  getValueForCheck: boolean; // 接收check方法传来的值2</span><br><span class="line">  getListOutputData(listComponentOutput: ListOutputData): void &#123;</span><br><span class="line">	if (listComponentOutput.openDrawer) &#123;</span><br><span class="line">		this.visible = true;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		this.visible = false;</span><br><span class="line">	&#125;</span><br><span class="line">	  this.getValueForTest = listComponentOutput.outputData[0]; // 值为：&quot;outputTestData&quot;</span><br><span class="line">	  this.getValueForCheck = listComponentOutput.outputData[1]; // 值为：true</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">	</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/20/First-Bolg-Hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -604,7 +748,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -615,7 +759,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -626,7 +770,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
