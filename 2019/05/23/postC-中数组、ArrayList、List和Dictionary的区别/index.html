@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="C#后端语法,">
 
 
 
@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="C#中数组、ArrayList、List和Dictionary的区别 数组1string[] str = new string[5]; 数组是C#中最早出现的，在内存中连续储存，索引速度快，赋值与修改很简单，可以利用偏移地址访问元素，可以用折半查找法查找元素，效率高。数组也有缺点：数组分配在一块连续的空间上，分配时必须确定大小。插入和删除元素时，需要大量移动元素去空出或者填补一个空间。 Array">
+<meta name="keywords" content="C#后端语法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/05/20/hello-world/index.html">
+<meta property="og:title" content="C#中数组、ArrayList、List和Dictionary的区别">
+<meta property="og:url" content="http://yoursite.com/2019/05/23/postC-中数组、ArrayList、List和Dictionary的区别/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="C#中数组、ArrayList、List和Dictionary的区别 数组1string[] str = new string[5]; 数组是C#中最早出现的，在内存中连续储存，索引速度快，赋值与修改很简单，可以利用偏移地址访问元素，可以用折半查找法查找元素，效率高。数组也有缺点：数组分配在一块连续的空间上，分配时必须确定大小。插入和删除元素时，需要大量移动元素去空出或者填补一个空间。 Array">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-20T01:23:58.209Z">
+<meta property="og:image" content="http://yoursite.com/2019/05/23/postC-中数组、ArrayList、List和Dictionary的区别/Dictionary.png">
+<meta property="og:updated_time" content="2019-05-23T09:28:22.764Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="C#中数组、ArrayList、List和Dictionary的区别">
+<meta name="twitter:description" content="C#中数组、ArrayList、List和Dictionary的区别 数组1string[] str = new string[5]; 数组是C#中最早出现的，在内存中连续储存，索引速度快，赋值与修改很简单，可以利用偏移地址访问元素，可以用折半查找法查找元素，效率高。数组也有缺点：数组分配在一块连续的空间上，分配时必须确定大小。插入和删除元素时，需要大量移动元素去空出或者填补一个空间。 Array">
+<meta name="twitter:image" content="http://yoursite.com/2019/05/23/postC-中数组、ArrayList、List和Dictionary的区别/Dictionary.png">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/20/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/23/postC-中数组、ArrayList、List和Dictionary的区别/">
 
 
 
 
 
-  <title>Hello World | Hexo</title>
+  <title>C#中数组、ArrayList、List和Dictionary的区别 | Hexo</title>
   
 
 
@@ -302,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/20/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/23/postC-中数组、ArrayList、List和Dictionary的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Czt">
@@ -319,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">C#中数组、ArrayList、List和Dictionary的区别</h1>
         
 
         <div class="post-meta">
@@ -331,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-20T09:23:58+08:00">
-                2019-05-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T16:57:51+08:00">
+                2019-05-23
               </time>
             
 
@@ -369,15 +372,16 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>C#中数组、ArrayList、List和Dictionary的区别</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string[] str = new string[5];</span><br></pre></td></tr></table></figure>
+<p>数组是C#中最早出现的，在内存中连续储存，索引速度快，赋值与修改很简单，<br>可以利用偏移地址访问元素，可以用折半查找法查找元素，效率高。<br>数组也有缺点：数组分配在一块连续的空间上，分配时必须确定大小。<br>插入和删除元素时，需要大量移动元素去空出或者填补一个空间。</p>
+<h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ArrayList list = new ArrayList();</span><br></pre></td></tr></table></figure>
+<p>ArrayList是.Net Framework提供的用于数据存储和检索的专用类，<br>大小按照其中存储的数据进行动态扩充与收缩，声明是不需要指定长度。<br>ArrayList继承了IList接口，可以很方便的进行数据的添加插入和移除操作。<br>ArrayList会把所有插入其中的数据都当作为object类型来处理，允许插入不同类型的数据，<br>所以导致使用ArrayList中的数据来处理问题的时候，很可能会报类型不匹配的错误（不是类型安全的），<br>使用ArrayList时，会将数据转化为对应的原类型来处理，存在装箱与拆箱的操作，会带来很大的性能损耗。</p>
+<h3 id="泛型List"><a href="#泛型List" class="headerlink" title="泛型List"></a>泛型List</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;BusinessParametersDetailAndValueDto&gt; list = new List&lt;BusinessParametersDetailAndValueDto&gt;();</span><br></pre></td></tr></table></figure>
+<p>List类是ArrayList类的泛型等效类。它的大部分用法都与ArrayList相似，因为List类也继承了IList接口。<br>最关键的区别在于，在声明List集合时，我们同时需要为其声明List集合内数据的对象类型。</p>
+<h3 id="Dictionary字典"><a href="#Dictionary字典" class="headerlink" title="Dictionary字典"></a>Dictionary字典</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dictionary&lt;int, string&gt; dictionary = new Dictionary&lt;int, string&gt;();</span><br></pre></td></tr></table></figure>
+<p>Dictionary提供快速的基于键值的元素查找，有很多元素的时候可以使用。<br>它包含在System.Collections.Generic中。在使用前，你必须声明它的键类型和值类型。<br>结构是：Dictionary &lt;[key] , [value] &gt;，使用.Add(1,”a”)方法进行添加，.remove(1)方法进行删除<br>.ContainsKey(1)通过key查找元素等。</p>
+<p><img src="/2019/05/23/postC-中数组、ArrayList、List和Dictionary的区别/Dictionary.png" alt="Dictionary字典包含路径"></p>
 
       
     </div>
@@ -393,6 +397,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/C-后端语法/" rel="tag"># C#后端语法</a>
+          
+        </div>
+      
 
       
       
@@ -402,15 +412,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/05/22/null传播/" rel="next" title="Null传播">
+                <i class="fa fa-chevron-left"></i> Null传播
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/21/Angular组件通讯/" rel="prev" title="Angular组件通讯">
-                Angular组件通讯 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -544,7 +554,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList"><span class="nav-number">2.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型List"><span class="nav-number">3.</span> <span class="nav-text">泛型List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dictionary字典"><span class="nav-number">4.</span> <span class="nav-text">Dictionary字典</span></a></li></ol></div>
             
 
           </div>
