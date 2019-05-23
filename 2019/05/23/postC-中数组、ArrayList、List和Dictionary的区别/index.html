@@ -88,7 +88,7 @@
 <meta property="og:description" content="C#中数组、ArrayList、List和Dictionary的区别 数组1string[] str = new string[5]; 数组是C#中最早出现的，在内存中连续储存，索引速度快，赋值与修改很简单，可以利用偏移地址访问元素，可以用折半查找法查找元素，效率高。数组也有缺点：数组分配在一块连续的空间上，分配时必须确定大小。插入和删除元素时，需要大量移动元素去空出或者填补一个空间。 Array">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/05/23/postC-中数组、ArrayList、List和Dictionary的区别/Dictionary.png">
-<meta property="og:updated_time" content="2019-05-23T09:28:22.764Z">
+<meta property="og:updated_time" content="2019-05-23T09:35:15.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#中数组、ArrayList、List和Dictionary的区别">
 <meta name="twitter:description" content="C#中数组、ArrayList、List和Dictionary的区别 数组1string[] str = new string[5]; 数组是C#中最早出现的，在内存中连续储存，索引速度快，赋值与修改很简单，可以利用偏移地址访问元素，可以用折半查找法查找元素，效率高。数组也有缺点：数组分配在一块连续的空间上，分配时必须确定大小。插入和删除元素时，需要大量移动元素去空出或者填补一个空间。 Array">
@@ -376,11 +376,11 @@
 <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string[] str = new string[5];</span><br></pre></td></tr></table></figure>
 <p>数组是C#中最早出现的，在内存中连续储存，索引速度快，赋值与修改很简单，<br>可以利用偏移地址访问元素，可以用折半查找法查找元素，效率高。<br>数组也有缺点：数组分配在一块连续的空间上，分配时必须确定大小。<br>插入和删除元素时，需要大量移动元素去空出或者填补一个空间。</p>
 <h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ArrayList list = new ArrayList();</span><br></pre></td></tr></table></figure>
-<p>ArrayList是.Net Framework提供的用于数据存储和检索的专用类，<br>大小按照其中存储的数据进行动态扩充与收缩，声明是不需要指定长度。<br>ArrayList继承了IList接口，可以很方便的进行数据的添加插入和移除操作。<br>ArrayList会把所有插入其中的数据都当作为object类型来处理，允许插入不同类型的数据，<br>所以导致使用ArrayList中的数据来处理问题的时候，很可能会报类型不匹配的错误（不是类型安全的），<br>使用ArrayList时，会将数据转化为对应的原类型来处理，存在装箱与拆箱的操作，会带来很大的性能损耗。</p>
+<p>ArrayList是.Net Framework提供的用于数据存储和检索的专用类，<br>大小按照其中存储的数据进行动态扩充与收缩，声明是不需要指定长度。<br>ArrayList继承了IList接口，可以很方便的进行数据的添加插入和移除操作。<br>ArrayList会把所有插入其中的数据都当作为object类型来处理，允许插入不同类型的数据，所以导致使用ArrayList中的数据来处理问题的时候，很可能会报类型不匹配的错误（不是类型安全的），<br>使用ArrayList时，会将数据转化为对应的原类型来处理，存在装箱与拆箱的操作，会带来很大的性能损耗。</p>
 <h3 id="泛型List"><a href="#泛型List" class="headerlink" title="泛型List"></a>泛型List</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;BusinessParametersDetailAndValueDto&gt; list = new List&lt;BusinessParametersDetailAndValueDto&gt;();</span><br></pre></td></tr></table></figure>
 <p>List类是ArrayList类的泛型等效类。它的大部分用法都与ArrayList相似，因为List类也继承了IList接口。<br>最关键的区别在于，在声明List集合时，我们同时需要为其声明List集合内数据的对象类型。</p>
 <h3 id="Dictionary字典"><a href="#Dictionary字典" class="headerlink" title="Dictionary字典"></a>Dictionary字典</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dictionary&lt;int, string&gt; dictionary = new Dictionary&lt;int, string&gt;();</span><br></pre></td></tr></table></figure>
-<p>Dictionary提供快速的基于键值的元素查找，有很多元素的时候可以使用。<br>它包含在System.Collections.Generic中。在使用前，你必须声明它的键类型和值类型。<br>结构是：Dictionary &lt;[key] , [value] &gt;，使用.Add(1,”a”)方法进行添加，.remove(1)方法进行删除<br>.ContainsKey(1)通过key查找元素等。</p>
+<p>Dictionary提供快速的基于键值的元素查找，有很多元素的时候可以使用。<br>它包含在System.Collections.Generic中。在使用前，你必须声明它的键类型和值类型。<br>结构是：Dictionary &lt;[key] , [value] &gt;，使用.Add(1,”a”)方法进行添加，.remove(1)方法进行删除，.ContainsKey(1)通过key查找元素等。</p>
 <p><img src="/2019/05/23/postC-中数组、ArrayList、List和Dictionary的区别/Dictionary.png" alt="Dictionary字典包含路径"></p>
 
       
