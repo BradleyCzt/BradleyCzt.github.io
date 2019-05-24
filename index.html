@@ -299,6 +299,127 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/C-中的交集、并集、差集和去重/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Czt">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/42_avatar_middle.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/24/C-中的交集、并集、差集和去重/" itemprop="url">C#中的交集、并集、差集和去重</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-24T18:53:25+08:00">
+                2019-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>数组的交集、并集、差集和去重操作</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>取交集：Intersect()<br>取并集：Union()<br>取差集：Except()<br>去重：Distinct()</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Employee</span><br><span class="line">   &#123;</span><br><span class="line">       public int Id &#123; get; set; &#125;</span><br><span class="line">       public string Name &#123; get; set; &#125;</span><br><span class="line">       public int Age &#123; get; set; &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   class CompareStudent : IEqualityComparer&lt;Employee&gt;</span><br><span class="line">   &#123;</span><br><span class="line">       public bool Equals(Employee x, Employee y)</span><br><span class="line">       &#123;</span><br><span class="line">           return x.Id == y.Id;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       public int GetHashCode(Employee p)</span><br><span class="line">       &#123;</span><br><span class="line">           if (p == null)</span><br><span class="line">               return 0;</span><br><span class="line">           return p.Id.GetHashCode();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   class Program</span><br><span class="line">   &#123;</span><br><span class="line">       static void Main(string[] args)</span><br><span class="line">       &#123;</span><br><span class="line">           List&lt;Employee&gt; employeeA = new List&lt;Employee&gt;();</span><br><span class="line">           List&lt;Employee&gt; employeeB = new List&lt;Employee&gt;();</span><br><span class="line">           employeeA.Add(new Employee &#123; Id = 1, Name = &quot;1&quot;, Age = 1 &#125;);</span><br><span class="line">           employeeA.Add(new Employee &#123; Id = 5, Name = &quot;5&quot;, Age = 2 &#125;);</span><br><span class="line">           employeeB.Add(new Employee &#123; Id = 1, Name = &quot;1&quot;, Age = 1 &#125;);</span><br><span class="line">           employeeB.Add(new Employee &#123; Id = 2, Name = &quot;2&quot;, Age = 2 &#125;);</span><br><span class="line">           employeeB.Add(new Employee &#123; Id = 3, Name = &quot;3&quot;, Age = 3 &#125;);</span><br><span class="line">           employeeB.Add(new Employee &#123; Id = 4, Name = &quot;4&quot;, Age = 4 &#125;);</span><br><span class="line">		</span><br><span class="line">		// 在A中存在但不在B中存在 即求差集</span><br><span class="line">           var result = employeeA.Where(a =&gt; !employeeB.Exists(b =&gt; b.Id == a.Id));</span><br><span class="line">           var resc = employeeA.Except(employeeB, new CompareStudent()); // 差集</span><br><span class="line">           var resj = employeeA.Intersect(employeeB, new CompareStudent()); // 交集</span><br><span class="line">           var resb = employeeA.Union(employeeB, new CompareStudent()); // 并集</span><br><span class="line">           var resD = employeeB.Distinct(new CompareStudent()); // 去重</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/线程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1115,7 +1236,7 @@ ThreadState：获取一个包含当前线程状态的值
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="C#后端知识,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="（编辑中。。。）">
+<meta name="description" content="数组的交集、并集、差集和去重操作 方法取交集：Intersect()取并集：Union()取差集：Except()去重：Distinct() 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445class Employee   &amp;#123;       public int Id">
+<meta name="keywords" content="C#后端知识">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Angular生命周期">
-<meta property="og:url" content="http://yoursite.com/2019/05/21/Angular生命周期/index.html">
+<meta property="og:title" content="C#中的交集、并集、差集和去重">
+<meta property="og:url" content="http://yoursite.com/2019/05/24/C-中的交集、并集、差集和去重/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="（编辑中。。。）">
+<meta property="og:description" content="数组的交集、并集、差集和去重操作 方法取交集：Intersect()取并集：Union()取差集：Except()去重：Distinct() 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445class Employee   &amp;#123;       public int Id">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-22T10:29:13.335Z">
+<meta property="og:updated_time" content="2019-05-24T11:04:46.450Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Angular生命周期">
-<meta name="twitter:description" content="（编辑中。。。）">
+<meta name="twitter:title" content="C#中的交集、并集、差集和去重">
+<meta name="twitter:description" content="数组的交集、并集、差集和去重操作 方法取交集：Intersect()取并集：Union()取差集：Except()去重：Distinct() 代码实现123456789101112131415161718192021222324252627282930313233343536373839404142434445class Employee   &amp;#123;       public int Id">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/21/Angular生命周期/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/24/C-中的交集、并集、差集和去重/">
 
 
 
 
 
-  <title>Angular生命周期 | Hexo</title>
+  <title>C#中的交集、并集、差集和去重 | Hexo</title>
   
 
 
@@ -302,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/Angular生命周期/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/C-中的交集、并集、差集和去重/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Czt">
@@ -319,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Angular生命周期</h1>
+          <h1 class="post-title" itemprop="name headline">C#中的交集、并集、差集和去重</h1>
         
 
         <div class="post-meta">
@@ -331,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-21T11:40:27+08:00">
-                2019-05-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-24T18:53:25+08:00">
+                2019-05-24
               </time>
             
 
@@ -369,8 +370,9 @@
       
 
       
-        <p>（编辑中。。。）</p>
-
+        <p>数组的交集、并集、差集和去重操作</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>取交集：Intersect()<br>取并集：Union()<br>取差集：Except()<br>去重：Distinct()</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Employee</span><br><span class="line">   &#123;</span><br><span class="line">       public int Id &#123; get; set; &#125;</span><br><span class="line">       public string Name &#123; get; set; &#125;</span><br><span class="line">       public int Age &#123; get; set; &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   class CompareStudent : IEqualityComparer&lt;Employee&gt;</span><br><span class="line">   &#123;</span><br><span class="line">       public bool Equals(Employee x, Employee y)</span><br><span class="line">       &#123;</span><br><span class="line">           return x.Id == y.Id;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       public int GetHashCode(Employee p)</span><br><span class="line">       &#123;</span><br><span class="line">           if (p == null)</span><br><span class="line">               return 0;</span><br><span class="line">           return p.Id.GetHashCode();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   class Program</span><br><span class="line">   &#123;</span><br><span class="line">       static void Main(string[] args)</span><br><span class="line">       &#123;</span><br><span class="line">           List&lt;Employee&gt; employeeA = new List&lt;Employee&gt;();</span><br><span class="line">           List&lt;Employee&gt; employeeB = new List&lt;Employee&gt;();</span><br><span class="line">           employeeA.Add(new Employee &#123; Id = 1, Name = &quot;1&quot;, Age = 1 &#125;);</span><br><span class="line">           employeeA.Add(new Employee &#123; Id = 5, Name = &quot;5&quot;, Age = 2 &#125;);</span><br><span class="line">           employeeB.Add(new Employee &#123; Id = 1, Name = &quot;1&quot;, Age = 1 &#125;);</span><br><span class="line">           employeeB.Add(new Employee &#123; Id = 2, Name = &quot;2&quot;, Age = 2 &#125;);</span><br><span class="line">           employeeB.Add(new Employee &#123; Id = 3, Name = &quot;3&quot;, Age = 3 &#125;);</span><br><span class="line">           employeeB.Add(new Employee &#123; Id = 4, Name = &quot;4&quot;, Age = 4 &#125;);</span><br><span class="line">		</span><br><span class="line">		// 在A中存在但不在B中存在 即求差集</span><br><span class="line">           var result = employeeA.Where(a =&gt; !employeeB.Exists(b =&gt; b.Id == a.Id));</span><br><span class="line">           var resc = employeeA.Except(employeeB, new CompareStudent()); // 差集</span><br><span class="line">           var resj = employeeA.Intersect(employeeB, new CompareStudent()); // 交集</span><br><span class="line">           var resb = employeeA.Union(employeeB, new CompareStudent()); // 并集</span><br><span class="line">           var resD = employeeB.Distinct(new CompareStudent()); // 去重</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -385,6 +387,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/C-后端知识/" rel="tag"># C#后端知识</a>
+          
+        </div>
+      
 
       
       
@@ -394,8 +402,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/21/Angular组件通讯/" rel="next" title="Angular组件通讯">
-                <i class="fa fa-chevron-left"></i> Angular组件通讯
+              <a href="/2019/05/24/线程/" rel="next" title="C#多线程">
+                <i class="fa fa-chevron-left"></i> C#多线程
               </a>
             
           </div>
@@ -403,10 +411,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/22/null传播/" rel="prev" title="Null传播">
-                Null传播 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -458,8 +462,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -521,6 +534,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">1.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">2.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
