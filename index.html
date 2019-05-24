@@ -299,6 +299,144 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/线程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Czt">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/42_avatar_middle.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/24/线程/" itemprop="url">C#多线程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-24T18:23:52+08:00">
+                2019-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>线程被定义为程序的执行路径，每个线程都定义了一个独特的控制流。线程是轻量级进程，一个使用线程的常用实例是现代操作系统中并行编程的实现。<br>使用线程节省了CPU周期的浪费，同时提高了应用程序的效率。</p>
+<h3 id="线程生命周期"><a href="#线程生命周期" class="headerlink" title="线程生命周期"></a>线程生命周期</h3><p>线程生命周期开始于System.Threading.Thread类对象被创建时，结束于线程被终止或完成执行时。<br>线程在生命周期中状态：<br>1.未启动状态：线程实例被创建但Start方法未被调用时的状况<br>2.就绪状态：当线程准备好运行并等待CPU周期时的状况<br>3.不可运行状态：已经调用Sleep方法、调用Wait方法、通过I/O操作阻塞。这几种情况下线程不可运行。<br>4.死亡状态：当线程已完成执行或者被终止时的状况</p>
+<h3 id="主线程"><a href="#主线程" class="headerlink" title="主线程"></a>主线程</h3><p>在C#中，System.Threading.Thread类用于线程的工作。它允许创建并访问多线程应用程序中的单个线程。进程中第一个被执行的线程成为主线程。<br>当C#程序开始执行时，主线程自动创建。使用Thread类创建的线程被主线程的子线程调用，可以使用Thread类的CurrentThread属性访问线程。</p>
+<h3 id="Thread类常见属性"><a href="#Thread类常见属性" class="headerlink" title="Thread类常见属性"></a>Thread类常见属性</h3><pre><code>CurrentContext：获取线程正在其中执行的当前上下文
+CurrentCulture：获取或设置当前线程的区域性
+CurrentPrinciple：获取或设置线程的当前负责人
+CurrentThread：获取当前正在运行的线程
+CurrentUICulture：获取或设置资源管理器使用的当前区域性以便在运行时查找区域性特定的资源
+ExecutionContext：获取一个 ExecutionContext 对象，该对象包含有关当前线程的各种上下文的信息
+IsAlive：获取一个指示当前线程执行状态的值
+IsBackground：获取或设置一个值，该值指示某个线程是否为后台线程
+IsThreadPoolThread：获取指示该线程是否属于托管线程池
+ManagedThreadId：获取当前托管线程的唯一标识
+Name：获取或设置线程的名称
+Priority：获取一个指示当前线程调度优先级的值
+ThreadState：获取一个包含当前线程状态的值
+</code></pre><h3 id="几个最常见方法"><a href="#几个最常见方法" class="headerlink" title="几个最常见方法"></a>几个最常见方法</h3><p>创建线程：<br>    线程是通过扩展 Thread 类创建的。扩展的 Thread 类调用 Start() 方法来开始子线程的执行</p>
+<p>管理线程：<br>    Thread 类提供了各种管理线程的方法。sleep() 方法用于在一个特定的时间暂停线程</p>
+<p>销毁线程：<br>    Abort()方法用于销毁线程。通过抛出threadabortexception在运行时中止线程。这个异常不能被捕获，如果有 finally 块，控制会被送至finally块</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/23/postC-中数组、ArrayList、List和Dictionary的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -977,7 +1115,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -999,7 +1137,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
