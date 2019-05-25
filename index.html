@@ -299,6 +299,136 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/25/postES6中的交集、并集、差集和去重/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Czt">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/42_avatar_middle.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/25/postES6中的交集、并集、差集和去重/" itemprop="url">ES6中的交集、并集、差集和去重</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-25T14:40:02+08:00">
+                2019-05-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>ES6中的交集、并集、差集和去重</p>
+<h3 id="声明两个有重复性的数组"><a href="#声明两个有重复性的数组" class="headerlink" title="声明两个有重复性的数组"></a>声明两个有重复性的数组</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> a = new Set([1,2,3]);</span><br><span class="line"><span class="built_in">let</span> b = New Set([3,1,6]);</span><br></pre></td></tr></table></figure>
+<h3 id="交集"><a href="#交集" class="headerlink" title="交集"></a>交集</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> intersectionSet = new Set([...a].filter(x =&gt; b.has(x)));</span><br><span class="line">console.log(intersectionSet);</span><br></pre></td></tr></table></figure>
+<p>输出结果：Set{1,3}</p>
+<h3 id="并集"><a href="#并集" class="headerlink" title="并集"></a>并集</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> unionSet = new Set([...a, ...b]);</span><br><span class="line">console.log(unionSet);</span><br></pre></td></tr></table></figure>
+<p>输出结果：Set{1,2,3,6},Set自动去重。</p>
+<h3 id="差集"><a href="#差集" class="headerlink" title="差集"></a>差集</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> differenceABSet = new Set([...a].filter(x =&gt; !b.has(x)));</span><br><span class="line">console.log(differenceABSet);</span><br></pre></td></tr></table></figure>
+<p>输出结果：Set{2,6}</p>
+<h3 id="对象转数组"><a href="#对象转数组" class="headerlink" title="对象转数组"></a>对象转数组</h3><p>Set返回的是一个对象，转数组方法使用：Array.from，<br>Array.from可以把类数组对象、可迭代对象转化为数组。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = Array.form(differenceABSet);</span><br><span class="line">console.log(arr);</span><br></pre></td></tr></table></figure></p>
+<p>输出结果：[2,6]</p>
+<p>(IE系列浏览器不支持)</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/C-中的交集、并集、差集和去重/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1236,7 +1366,7 @@ ThreadState：获取一个包含当前线程状态的值
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1258,7 +1388,7 @@ ThreadState：获取一个包含当前线程状态的值
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
