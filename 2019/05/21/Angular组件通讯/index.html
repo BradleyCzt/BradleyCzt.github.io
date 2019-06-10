@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="组件通讯学习组件关系包含：父子关系、兄弟关系、无直接关系通常处理方式：    1.父子之间（@Input,@Output,模版变量,@ViewChild）    2.非父子之间（Service,localStorage）    3.Session等服务器端解决方法 父子组件之间的通讯：    @Input： 属性绑定，子组件中定义@Input属性接收父组件向子组件传递的数据    @Output：">
+<meta name="description" content="组件通讯学习组件关系包含：父子关系、兄弟关系、无直接关系 通常处理方式：    1.父子之间（@Input,@Output,模版变量,@ViewChild）    2.非父子之间（Service,localStorage）    3.Session等服务器端解决方法 父子组件之间的通讯：    @Input： 属性绑定，子组件中定义@Input属性接收父组件向子组件传递的数据    @Output">
 <meta name="keywords" content="Angular,组件通讯,前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angular组件通讯">
 <meta property="og:url" content="http://yoursite.com/2019/05/21/Angular组件通讯/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="组件通讯学习组件关系包含：父子关系、兄弟关系、无直接关系通常处理方式：    1.父子之间（@Input,@Output,模版变量,@ViewChild）    2.非父子之间（Service,localStorage）    3.Session等服务器端解决方法 父子组件之间的通讯：    @Input： 属性绑定，子组件中定义@Input属性接收父组件向子组件传递的数据    @Output：">
+<meta property="og:description" content="组件通讯学习组件关系包含：父子关系、兄弟关系、无直接关系 通常处理方式：    1.父子之间（@Input,@Output,模版变量,@ViewChild）    2.非父子之间（Service,localStorage）    3.Session等服务器端解决方法 父子组件之间的通讯：    @Input： 属性绑定，子组件中定义@Input属性接收父组件向子组件传递的数据    @Output">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-22T10:29:31.944Z">
+<meta property="og:updated_time" content="2019-06-10T01:55:07.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular组件通讯">
-<meta name="twitter:description" content="组件通讯学习组件关系包含：父子关系、兄弟关系、无直接关系通常处理方式：    1.父子之间（@Input,@Output,模版变量,@ViewChild）    2.非父子之间（Service,localStorage）    3.Session等服务器端解决方法 父子组件之间的通讯：    @Input： 属性绑定，子组件中定义@Input属性接收父组件向子组件传递的数据    @Output：">
+<meta name="twitter:description" content="组件通讯学习组件关系包含：父子关系、兄弟关系、无直接关系 通常处理方式：    1.父子之间（@Input,@Output,模版变量,@ViewChild）    2.非父子之间（Service,localStorage）    3.Session等服务器端解决方法 父子组件之间的通讯：    @Input： 属性绑定，子组件中定义@Input属性接收父组件向子组件传递的数据    @Output">
 
 
 
@@ -392,10 +392,18 @@
       
 
       
-        <p>组件通讯学习<br>组件关系包含：父子关系、兄弟关系、无直接关系<br>通常处理方式：<br>    1.父子之间（@Input,@Output,模版变量,@ViewChild）<br>    2.非父子之间（Service,localStorage）<br>    3.Session等服务器端解决方法</p>
+        <h2 id="组件通讯学习"><a href="#组件通讯学习" class="headerlink" title="组件通讯学习"></a>组件通讯学习</h2><p>组件关系包含：父子关系、兄弟关系、无直接关系</p>
+<p>通常处理方式：<br>    1.父子之间（@Input,@Output,模版变量,@ViewChild）<br>    2.非父子之间（Service,localStorage）<br>    3.Session等服务器端解决方法</p>
 <p>父子组件之间的通讯：<br>    @Input： 属性绑定，子组件中定义@Input属性接收父组件向子组件传递的数据<br>    @Output：事件绑定，子组件中定义@Output属性向父组件传递数据的同时触发事件</p>
-<p>例：父子组件之间的通讯<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">1.父组件直接调用子组件的方法</span><br><span class="line">  通过模板内部定义子组件变量,在父组件上可以直接调用子组件的方法：</span><br><span class="line">	</span><br><span class="line">  1)子组件中定义@Input属性（ts）</span><br><span class="line">  @Input() isShowData: boolean; // 父组件传入的值:是否显示数据</span><br><span class="line"></span><br><span class="line">  2)父组件中定义属性（ts）</span><br><span class="line">  isShowData: false; // 父组件传给子组件的值:是否显示数据(否)</span><br><span class="line">	</span><br><span class="line">  3)父组件直接调用子组件时传递数据（html）</span><br><span class="line">  &lt;app-component [isShowData]=&quot;isShowData&quot;&gt;&lt;/app-component&gt;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">2.父组件接受子组件派发的事件:</span><br><span class="line">  通过@Output在子组件绑定一个事件发射器,在父组件通过事件绑定监听该事件，</span><br><span class="line">  这样在子组件派发一个事件,父组件就能够收到：</span><br><span class="line">  </span><br><span class="line">  1)子组件中定义@Output属性（ts）</span><br><span class="line">  @Output() listComponentOutput: EventEmitter&lt;any&gt; = new EventEmitter&lt;any&gt;(); // 传出属性</span><br><span class="line">  // check方法赋值(因为是any类型，所以outputData可以传出任意类型)</span><br><span class="line">  check(): void &#123;</span><br><span class="line">  	this.listOutputData.openDrawer = true;</span><br><span class="line"> 	this.listOutputData.outputData = [&quot;outputTestData&quot;,true];</span><br><span class="line"> 	this.listComponentOutput.emit(this.listOutputData);</span><br><span class="line">  &#125;</span><br><span class="line">	</span><br><span class="line">  2)父组件直接调用子组件时，子组件派发一个事件（html）</span><br><span class="line">  &lt;app-component (listComponentOutput)=&apos;getListOutputData($event)&apos;&gt;&lt;/app-component&gt;</span><br><span class="line">	</span><br><span class="line">  3)父组件中通过事件绑定来监听（ts）</span><br><span class="line">  visible: boolean; // 是否显示某些东西</span><br><span class="line">  getValueForTest: string; // 接收check方法传来的值1</span><br><span class="line">  getValueForCheck: boolean; // 接收check方法传来的值2</span><br><span class="line">  getListOutputData(listComponentOutput: ListOutputData): void &#123;</span><br><span class="line">	if (listComponentOutput.openDrawer) &#123;</span><br><span class="line">		this.visible = true;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		this.visible = false;</span><br><span class="line">	&#125;</span><br><span class="line">	  this.getValueForTest = listComponentOutput.outputData[0]; // 值为：&quot;outputTestData&quot;</span><br><span class="line">	  this.getValueForCheck = listComponentOutput.outputData[1]; // 值为：true</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">	</span><br></pre></td></tr></table></figure></p>
-<p>（编辑中。。。）</p>
+<p>例：父子组件之间的通讯</p>
+<h3 id="1-父组件直接调用子组件的方法"><a href="#1-父组件直接调用子组件的方法" class="headerlink" title="1.父组件直接调用子组件的方法"></a>1.父组件直接调用子组件的方法</h3><p>  通过模板内部定义子组件变量,在父组件上可以直接调用子组件的方法：</p>
+<p>  1)子组件中定义@Input属性（ts）<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@Input() isShowData: boolean; // 父组件传入的值:是否显示数据</span><br></pre></td></tr></table></figure></p>
+<p>  2)父组件中定义属性（ts）<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isShowData: <span class="literal">false</span>; // 父组件传给子组件的值:是否显示数据(否)</span><br></pre></td></tr></table></figure></p>
+<p>  3)父组件直接调用子组件时传递数据（html）<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;app-component [isShowData]=<span class="string">"isShowData"</span>&gt;&lt;/app-component&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-父组件接受子组件派发的事件"><a href="#2-父组件接受子组件派发的事件" class="headerlink" title="2.父组件接受子组件派发的事件:"></a>2.父组件接受子组件派发的事件:</h3><p>  通过@Output在子组件绑定一个事件发射器,在父组件通过事件绑定监听该事件，<br>  这样在子组件派发一个事件,父组件就能够收到：</p>
+<p>  1)子组件中定义@Output属性（ts）<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Output() listComponentOutput: EventEmitter&lt;any&gt; = new EventEmitter&lt;any&gt;(); // 传出属性</span><br><span class="line">// check方法赋值(因为是any类型，所以outputData可以传出任意类型)</span><br><span class="line">check(): void &#123;</span><br><span class="line">	this.listOutputData.openDrawer = <span class="literal">true</span>;</span><br><span class="line">this.listOutputData.outputData = [<span class="string">"outputTestData"</span>,<span class="literal">true</span>];</span><br><span class="line">this.listComponentOutput.emit(this.listOutputData);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>  2)父组件直接调用子组件时，子组件派发一个事件（html）<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;app-component (listComponentOutput)=<span class="string">'getListOutputData($event)'</span>&gt;&lt;/app-component&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  3)父组件中通过事件绑定来监听（ts）<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> visible: boolean; // 是否显示某些东西</span><br><span class="line"> getValueForTest: string; // 接收check方法传来的值1</span><br><span class="line"> getValueForCheck: boolean; // 接收check方法传来的值2</span><br><span class="line"> getListOutputData(listComponentOutput: ListOutputData): void &#123;</span><br><span class="line"><span class="keyword">if</span> (listComponentOutput.openDrawer) &#123;</span><br><span class="line">	this.visible = <span class="literal">true</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	this.visible = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">  this.getValueForTest = listComponentOutput.outputData[0]; // 值为：<span class="string">"outputTestData"</span></span><br><span class="line">  this.getValueForCheck = listComponentOutput.outputData[1]; // 值为：<span class="literal">true</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -494,8 +502,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -557,6 +574,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#组件通讯学习"><span class="nav-number">1.</span> <span class="nav-text">组件通讯学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-父组件直接调用子组件的方法"><span class="nav-number">1.1.</span> <span class="nav-text">1.父组件直接调用子组件的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-父组件接受子组件派发的事件"><span class="nav-number">1.2.</span> <span class="nav-text">2.父组件接受子组件派发的事件:</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
