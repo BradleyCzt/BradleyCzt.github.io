@@ -1009,7 +1009,16 @@ ThreadState：获取一个包含当前线程状态的值
       
         
           
-            <p>（编辑中。。。）</p>
+            <h2 id="Angular生命周期"><a href="#Angular生命周期" class="headerlink" title="Angular生命周期"></a>Angular生命周期</h2><h3 id="什么是Angular生命周期"><a href="#什么是Angular生命周期" class="headerlink" title="什么是Angular生命周期"></a>什么是Angular生命周期</h3><p>为了平滑开发过程，Angular管理其所有组件。与任何自然生命周期一样，每个组件都有其生命周期事件，如出生，生活事件和死亡。Angular中的每个组件都有一个生命周期，生命周期的每个阶段都从初始化到破坏。组件生命周期通常经历八个不同阶段。</p>
+<p>组件初始化时创建并显示其根组件。然后设计它们并生成子组件。对于在应用程序开发期间加载的所有组件，它会一直检查数据绑定属性何时更改和更新。当组件不再使用时，它将被删除并从DOM中排出。</p>
+<h3 id="生命周期钩子"><a href="#生命周期钩子" class="headerlink" title="生命周期钩子"></a>生命周期钩子</h3><p>组件生命周期中的事件也称为“生命周期钩子”。在Angular中，也针对生命周期的不同时刻给予了一些接口，你可以在代码中强制自己的组件/指令在创建时实现这些接口。</p>
+<p>每个接口都有唯一的一个钩子方法，它们的名字是由接口名再加上ng前缀构成的。比如，OnInit接口的钩子方法叫做ngOnInit，Angular在创建组件后立刻调用它。</p>
+<h3 id="生命周期的顺序"><a href="#生命周期的顺序" class="headerlink" title="生命周期的顺序"></a>生命周期的顺序</h3><p>1.ngOnChanges<br>当组件发生数据绑定属性变化时，会寻求此回调函数。<br>ngOnChanges()方法获取了一个对象，它可以同时观测1个/多个绑定的属性值，它把每个发生变化的属性名都映射到了一个SimpleChange对象， 该对象中有属性的当前值和前一个值。</p>
+<p>2.ngOnInit<br>在Angular第一次显示数据绑定和设置指令/组件的输入属性之后，初始化指令/组件，只调用一次。</p>
+<p>3.ngDoCheck<br>检测那些Angular自身无法捕获的变更。<br>即使组件的属性没有变化，也会执行此挂钩。如果Angular未能检测到输入属性的任何变化，那么这个钩子就会出现问题。</p>
+<p>4.ngAfterContentInit和ngAfterContentChecked<br>只适用于组件，在外来内容被投影到组件中之后/投影组件内容的变更检测之后调用。</p>
+<p>5.ngAfterViewInit和ngAfterViewChecked<br>只适用于组件，初始化完/检测变更完组件视图及其子视图之后调用。<br>跟相应的content钩子类似，在对应的content钩子后面。</p>
+<p>6.ngOnDestroy<br>反订阅可观察对象和分离事件处理器，以防内存泄漏。<br>可以使用清理逻辑并取消订阅所有可观察对象并从事件处理程序中分离。</p>
 
           
         
